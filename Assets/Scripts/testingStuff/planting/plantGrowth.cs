@@ -5,14 +5,10 @@ using UnityEngine;
 
 public class plantGrowth : MonoBehaviour
 {
+    //just putting the seeds and letting them grow with a timer
     private int currentProgress = 0;
     public int timeBetweenGrowth;
     public int maxGrowth;
-
-    private void Start()
-    {
-        InvokeRepeating("growth",timeBetweenGrowth,timeBetweenGrowth);
-    }
 
     public void growth()
     {
@@ -30,5 +26,10 @@ public class plantGrowth : MonoBehaviour
         {
             currentProgress++;
         }
+    }
+
+    private void OnMouseDown()
+    {
+        InvokeRepeating("growth",timeBetweenGrowth,timeBetweenGrowth);
     }
 }
